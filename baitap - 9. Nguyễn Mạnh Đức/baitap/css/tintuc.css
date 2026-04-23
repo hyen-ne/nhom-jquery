@@ -1,0 +1,233 @@
+/* =======================
+   TIN TỨC & CHI TIẾT TIN TỨC (TONE HỒNG SANG CHẢNH)
+   (Đã đồng bộ layout với trang Liên hệ)
+======================= */
+
+/* 1. IMPORT FONT CHỮ TRANG TRÍ (Tạo cảm giác tạp chí) */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400&display=swap');
+
+/* =======================
+   2. TRANG DANH SÁCH TIN TỨC (tintuc.html)
+======================= */
+/* ĐỒNG BỘ LỀ TOÀN TRANG GIỐNG TRANG LIÊN HỆ */
+body {
+    padding: 20px 40px !important;
+}
+
+.news-main {
+    padding: 40px 0; 
+    background-color: var(--bg-page, #f5f7fa);
+}
+
+.news-list {
+    max-width: 1100px; /* Cố định chuẩn 1100px giống form Liên Hệ */
+    margin: 0 auto; 
+    width: 100%;
+    /* Đã xóa padding: 0 40px; ở đây để thẻ bài viết đẩy ra sát mép khung 1100px */
+}
+
+/* Thẻ bọc link toàn bộ bài viết */
+.news-item-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    margin-bottom: 30px;
+}
+
+/* Khung Card bài viết */
+.news-item {
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 12px; 
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04); 
+    border: 1px solid #eaedf1;
+    transition: all 0.3s ease;
+    align-items: center; 
+    gap: 30px; 
+}
+
+/* Hiệu ứng Hover cho Card */
+.news-item-link:hover .news-item {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(255, 77, 141, 0.12); 
+    border-color: var(--primary-light, #ffe6f0);
+}
+
+/* Phần Ảnh Danh sách */
+.news-image-container {
+    width: 35%; 
+    max-width: 320px;
+    flex-shrink: 0;
+    overflow: hidden; 
+    border-radius: 8px;
+}
+
+.news-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4/3; 
+    object-fit: cover; 
+    display: block;
+    transition: 0.4s ease; 
+}
+
+.news-item-link:hover .news-image {
+    transform: scale(1.05);
+}
+
+/* Phần Chữ Danh sách */
+.news-content {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+}
+
+.news-title {
+    font-family: 'Playfair Display', serif; 
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: 12px;
+    line-height: 1.4;
+    transition: color 0.3s;
+}
+
+.news-title.red {
+    color: var(--primary-color, #ff4d8d); 
+}
+
+.news-title.black {
+    color: #222222; 
+}
+
+/* Đổi màu chữ sang hồng khi hover vào card */
+.news-item-link:hover .news-title.black,
+.news-item-link:hover .news-title.red {
+    color: var(--primary-hover, #e03c7a);
+}
+
+.news-description {
+    font-family: 'Lora', serif; 
+    color: #555555;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* =======================
+/* =======================
+   SỬA LỖI CHI TIẾT TIN TỨC (KHỚP 100% VỚI DANH SÁCH)
+======================= */
+
+.news-detail-main {
+    padding: 40px 0; /* Đồng bộ khoảng cách với news-main */
+    background-color: var(--bg-page, #f5f7fa);
+    width: 100%;
+}
+
+.news-detail-container {
+    max-width: 1100px; /* PHẢI LÀ 1100px ĐỂ THẲNG VỚI NEWS-LIST */
+    margin: 0 auto;
+    width: 100%;
+    background: #ffffff;
+    /* Giảm padding hai bên một chút để nội dung rộng rãi hơn */
+    padding: 40px 50px; 
+    border-radius: 12px; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04); /* Đổ bóng nhẹ giống News Item */
+    border: 1px solid #eaedf1; /* Viền giống News Item */
+    box-sizing: border-box; /* Đảm bảo padding không làm tăng chiều rộng khung */
+}
+
+/* Tiêu đề bài viết */
+.news-detail-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px; /* Chỉnh lại size vừa phải */
+    margin-bottom: 20px;
+    line-height: 1.4;
+    color: #222; /* Màu đen sang trọng */
+    text-align: left;
+    font-weight: 700;
+}
+
+/* Ảnh chính: Đảm bảo ảnh luôn full chiều rộng khung */
+.news-detail-image-container {
+    width: 100%;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.news-detail-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* Nội dung văn bản */
+.news-detail-body p {
+    font-family: 'Lora', serif;
+    font-size: 17px;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 20px;
+    text-align: justify; /* Căn đều hai bên cho chuyên nghiệp */
+}
+
+/* Responsive cho điện thoại */
+@media (max-width: 1140px) {
+    .news-detail-container {
+        width: calc(100% - 40px); /* Đảm bảo không dính sát mép màn hình khi thu nhỏ */
+        padding: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .news-detail-container {
+        padding: 20px;
+    }
+    .news-detail-title {
+        font-size: 24px;
+    }
+}
+/* =======================
+   4. RESPONSIVE (ĐIỆN THOẠI & TABLET)
+======================= */
+@media (max-width: 1024px) {
+    .news-list,
+    .news-detail-container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .news-item {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+    
+    .news-image-container {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .news-detail-container {
+        padding: 30px 20px;
+    }
+    
+    .news-detail-title {
+        font-size: 26px;
+    }
+
+    .news-detail-body h2 {
+        font-size: 22px;
+    }
+    
+    .news-detail-body p {
+        font-size: 16px;
+        text-align: left; 
+    }
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Giỏ hàng - BeautyStore</title>
+    <link rel="stylesheet" href="../../css/sanpham.css">
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body>
+    <iframe src="../chung/header.html" width="100%" height="150" frameborder="0"></iframe>
+    <nav class="menu page-menu">
+        <ul>
+            <li><a href="../../index.html">Trang chủ</a></li>
+            <li><a href="../sanpham/sanpham.html">Sản phẩm</a></li>
+            <li><a href="../tintuc/tintuc.html">Tin tức</a></li>
+            <li><a href="../lienhe.html">Liên hệ</a></li>
+        </ul>
+    </nav>
+    <h1>Giỏ hàng của bạn</h1>
+
+    <div class="cart-container">
+
+        <div class="cart-table-wrapper">
+            <table class="cart-table">
+                <thead>
+                    <tr>
+                        <th>Sản phẩm</th>
+                        <th>Đơn giá</th>
+                        <th>Số lượng</th>
+                        <th>Thành tiền</th>
+                        <th>Xóa</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="cart-product-info">
+                                <img src="../../images/sanpham/kem-duong/kemvtmc.jpg" alt="Kem Vitamin C">
+                                <span>Kem dưỡng Vitamin C Lebelage</span>
+                            </div>
+                        </td>
+                        <td style="color:#ff3b5c; font-weight:600;">250.000đ</td>
+                        <td><input type="number" value="1" min="1" class="qty-input"></td>
+                        <td style="color:#ff3b5c; font-weight:600;">250.000đ</td>
+                        <td><button class="btn-remove">✖</button></td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="cart-product-info">
+                                <img src="../../images/sanpham/son-moi/sonromand.jpg" alt="Son Romand">
+                                <span>Rom&nd Juicy Lasting Tint</span>
+                            </div>
+                        </td>
+                        <td style="color:#ff3b5c; font-weight:600;">230.000đ</td>
+                        <td><input type="number" value="2" min="1" class="qty-input"></td>
+                        <td style="color:#ff3b5c; font-weight:600;">460.000đ</td>
+                        <td><button class="btn-remove">✖</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="cart-summary">
+            <h2 style="margin-top:0; font-size:20px;">Tóm tắt đơn hàng</h2>
+
+            <div class="summary-row">
+                <span>Tạm tính:</span>
+                <span style="font-weight:600;">710.000đ</span>
+            </div>
+
+            <div class="summary-row">
+                <span>Phí vận chuyển:</span>
+                <span style="font-weight:600;">30.000đ</span>
+            </div>
+
+            <div class="summary-row" style="color:var(--secondary); font-size:14px;">
+                <span>* Đã áp dụng mã miễn phí vận chuyển 15k</span>
+            </div>
+
+            <div class="summary-total">
+                <span>Tổng cộng:</span>
+                <span>740.000đ</span>
+            </div>
+
+            <button class="btn-checkout">💳 Tiến hành thanh toán</button>
+        </div>
+
+    </div>
+
+    <iframe src="../chung/footer.html" style="width: 100%; height: 350px; border: none; overflow: hidden;"
+        scrolling="no"></iframe>
+
+</body>
+
+</html>
